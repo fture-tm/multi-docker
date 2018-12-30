@@ -1,7 +1,8 @@
 sudo: required
 services:
   - docker
-
+language: 
+  - none
 before_install:
   - docker build -t moharam/react-test -f ./client/Dockerfile.dev ./client
 
@@ -21,7 +22,7 @@ after_success:
   - docker push moharam/multi-server
   - docker push moharam/multi-worker
 
-deploy:
+#deploy:
 #  provider: elasticbeanstalk
  # region: us-west-1
  # app: multi-docker
