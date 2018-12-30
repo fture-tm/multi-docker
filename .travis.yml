@@ -2,7 +2,7 @@ sudo: required
 services:
   - docker
 language: 
-  - none
+  - ruby
 before_install:
   - docker build -t moharam/react-test -f ./client/Dockerfile.dev ./client
 
