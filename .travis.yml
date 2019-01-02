@@ -4,8 +4,9 @@ services:
 language: 
   - ruby
 before_install:
-  - docker build -t moharam/react-test -f ./client/Dockerfile.dev ./client
-  - gem install bundler
+   - gem install bundler
+   - docker build -t moharam/react-test -f ./client/Dockerfile.dev ./client
+  
 
 script:
 #  - docker run moharam/react-test npm test -- --coverage
