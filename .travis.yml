@@ -5,10 +5,11 @@ language:
   - ruby
 before_install:
   - docker build -t moharam/react-test -f ./client/Dockerfile.dev ./client
+  - gem install bundler
 
-#script:
+script:
 #  - docker run moharam/react-test npm test -- --coverage
-
+   - script: 'bundle exec rake spec'
 after_success:
   - docker build -t moharam/multi-client ./client
   - docker build -t moharam/multi-nginx ./nginx
